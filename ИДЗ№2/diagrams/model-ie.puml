@@ -1,0 +1,22 @@
+@startuml
+title Вариант 26. Entity Relationship Diagram
+
+entity "School" as school {
+  * school_id : INTEGER <<PK>>
+  --
+  school_name : TEXT
+}
+
+entity "Student" as student {
+  * student_id : INTEGER <<PK>>
+  --
+  school_id : INTEGER <<FK>>
+  student_name : TEXT
+  avg_grade : REAL
+  --
+  constraint: avg_grade >= 0
+}
+
+school ||--o{ student : contains
+
+@enduml

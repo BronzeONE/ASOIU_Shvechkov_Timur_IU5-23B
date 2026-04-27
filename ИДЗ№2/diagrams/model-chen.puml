@@ -1,0 +1,21 @@
+@startchen
+title Вариант 26. Школы и ученики
+
+entity SCHOOL {
+  school_id <<key>>
+  school_name
+}
+
+entity STUDENT {
+  student_id <<key>>
+  school_id <<FK>>
+  student_name
+  avg_grade (>= 0)
+}
+
+relationship "обучается в" as R
+
+SCHOOL -1- R
+R -N- STUDENT
+
+@endchen

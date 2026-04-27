@@ -1,0 +1,15 @@
+@startuml
+title ReportBuilder для отчёта "Полный список учеников"
+
+start
+:new ReportBuilder(db);
+:Query("SELECT st.student_name, sc.school_name, st.avg_grade ...");
+:Title("Полный список учеников");
+:Header("Имя ученика", "Школа", "Средний балл");
+:ColumnWidths(5, 26, 30, 16);
+:Numbered();
+:Footer("Всего записей");
+:Print();
+stop
+
+@enduml
